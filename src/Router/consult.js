@@ -6,12 +6,12 @@ import withReactContent from "sweetalert2-react-content";
 
 const Consult = () => {
   const MySwal = withReactContent(Swal);
-  const [freight, setFreight] = useState();
+  const [cep, setCep] = useState();
 
   const handleConsult = async () => {
     try {
       const response = await axios.get(
-        "https://localhost:7045/Quotation/QuoteByFreight/" + freight
+        "https://localhost:7045/Quotation/QuoteByCep/" + cep
       );
 
       MySwal.fire({
@@ -49,15 +49,15 @@ const Consult = () => {
         <h1 className="text-black text-2xl">Consultar cotações</h1>
 
         <div className="flex flex-col w-auto my-5">
-          <label htmlFor="RecipientCEP">Digite o cep</label>
+          <label htmlFor="cep">Digite o CEP</label>
           <input
             type="text"
-            id="freight"
+            id="cep"
             placeholder="CEP"
             className="input input-ghost"
-            name="freight"
-            value={freight ?? ""}
-            onChange={(e) => setFreight(e.target.value)}
+            name="cep"
+            value={cep ?? ""}
+            onChange={(e) => setCep(e.target.value)}
           />
         </div>
         <div className="flex w-full justify-between mt-10">
