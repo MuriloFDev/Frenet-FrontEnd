@@ -43,7 +43,7 @@ const Quote = () => {
       };
 
       const response = await axios.post(
-        "https://localhost:7262/Quotation/Quote_Shipping",
+        "https://localhost:7045/Quotation/Quote_Shipping",
         {
           ...vData,
         }

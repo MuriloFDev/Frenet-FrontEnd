@@ -11,7 +11,7 @@ const Consult = () => {
   const handleConsult = async () => {
     try {
       const response = await axios.get(
-        "https://localhost:7262/Quotation/QuoteByFreight/" + freight
+        "https://localhost:7045/Quotation/QuoteByFreight/" + freight
       );
 
       MySwal.fire({
